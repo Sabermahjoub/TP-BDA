@@ -1,0 +1,25 @@
+1. R(A,B,C), F = {A → B, B → C}
+A → B → C ⇒ A → C (transitivité)
+Clé = A
+
+-> Pas en BCNF (B → C viole)
+
+* Décomposition :
+
+R1(B,C)
+R2(A,B)
+2. R(A,B,C), F = {A → B, A → C}
+A détermine tout ⇒ clé = A
+
+-> Déjà en BCNF
+
+3. R(A,B,C), F = {AB → C, C → B}
+AB → C
+C → B ⇒ C → B
+
+-> violation BCNF (C n’est pas clé)
+
+* Décomposition :
+
+R1(C,B)
+R2(A,C)

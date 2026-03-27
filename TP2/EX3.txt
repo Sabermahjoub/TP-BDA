@@ -1,0 +1,74 @@
+1. Trouver 16 DF 
+
+F = {
+A → B,C
+CD → E
+B → D
+E → A
+}
+
+Exemples :
+
+A → B
+A → C
+A → D (via B)
+A → E (via CD)
+E → A
+E → B
+E → C
+E → D
+CD → A
+CD → B
+CD → C
+CD → D
+CD → E
+B → D
+A → BC
+E → BC
+2.
+(a) Fermeture
+
+-> B⁺ :
+
+B → D
+D → A
+A → B,C,D
+
+⇒ B⁺ = {A,B,C,D,E}
+
+-> (A,B)⁺ :
+
+A → B,C,D
+B → D
+CD → E
+
+-> (A,B)⁺ = {A,B,C,D,E}
+
+(b) {A,F} super-clé
+A → B,C,D
+CD → E
+
+-> A⁺ = {A,B,C,D,E}
+
+F ⇒ tous attributs
+
+* super-clé
+
+(c) BCNF ?
+
+ Non (ex: B → D, B pas clé)
+
+* Décomposition :
+
+R1(B,D)
+R2(A,B,C,E,F)
+3. Décomposition
+(a) R1(A,B,C) et R2(A,D,E)
+
+ * Intersection = A
+A est clé ⇒ sans perte
+
+(b) R1(A,B,C) et R2(C,D,E)
+
+❌ Intersection = C
+C pas clé ⇒ avec perte
